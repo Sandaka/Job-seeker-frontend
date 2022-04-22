@@ -11,12 +11,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import { CreateResumeComponent } from './resume/create-resume/create-resume.component';
+import { ResumeModule } from './resume/resume.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent,
-    CreateResumeComponent
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +26,7 @@ import { CreateResumeComponent } from './resume/create-resume/create-resume.comp
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    ResumeModule,
     BrowserAnimationsModule
   ],
   providers: [],

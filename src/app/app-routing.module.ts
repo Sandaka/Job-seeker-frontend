@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateResumeComponent } from './resume/create-resume/create-resume.component';
+import { EducationDetailComponent } from './resume/education-detail/education-detail.component';
 
 const routes: Routes = [
   {
