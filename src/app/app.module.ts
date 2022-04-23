@@ -10,8 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
-import { CreateResumeComponent } from './resume/create-resume/create-resume.component';
-import { ResumeModule } from './resume/resume.module';
+import { ResumeModuleModule } from './resume-module/resume-module.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import { ResumeModule } from './resume/resume.module';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    ResumeModule,
+    ResumeModuleModule,
     BrowserAnimationsModule
   ],
   providers: [],
