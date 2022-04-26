@@ -8,7 +8,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS, MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
@@ -23,6 +23,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ProfessionalQualificationComponent } from './professional-qualification/professional-qualification.component';
 import { SkillsComponent } from './skills/skills.component';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 
 
@@ -37,6 +38,8 @@ import { SkillsComponent } from './skills/skills.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatExpansionModule,
     MatListModule,
     MatCardModule,
@@ -51,7 +54,8 @@ import { SkillsComponent } from './skills/skills.component';
     MatDatepickerModule,
     MatSortModule,
     MatNativeDateModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    NgxMatSelectSearchModule
   ]
 })
 export class ResumeModuleModule { }

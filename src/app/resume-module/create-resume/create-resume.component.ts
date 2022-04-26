@@ -8,71 +8,74 @@ import { EducationDetailComponent } from '../education-detail/education-detail.c
 })
 export class CreateResumeComponent implements OnInit {
 
-  @ViewChild('container', { read: ViewContainerRef })
-  container!: ViewContainerRef;
+  // @ViewChild('container', { read: ViewContainerRef })
+  // container!: ViewContainerRef;
 
 
-  private _counter = 1;
-  componentsReferences = Array<ComponentRef<EducationDetailComponent>>()
+  // private _counter = 1;
+  // componentsReferences = Array<ComponentRef<EducationDetailComponent>>()
 
 
-  child_unique_key: number = 0;
+  // child_unique_key: number = 0;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit(): void {
+    
   }
 
 
-  createComponent() {
-    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(EducationDetailComponent);
+  // createComponent() {
+  //   let componentFactory = this.componentFactoryResolver.resolveComponentFactory(EducationDetailComponent);
 
-    let childComponentRef = this.container.createComponent(componentFactory);
+  //   let childComponentRef = this.container.createComponent(componentFactory);
 
-    let childComponent = childComponentRef.instance;
-    childComponent.unique_key = ++this.child_unique_key;
-    childComponent.parentRef = this;
+  //   let childComponent = childComponentRef.instance;
+  //   childComponent.unique_key = ++this.child_unique_key;
+  //   childComponent.parentRef = this;
 
-    // add reference for newly created component
-    this.componentsReferences.push(childComponentRef);
-  }
+  //   // add reference for newly created component
+  //   this.componentsReferences.push(childComponentRef);
+  // }
 
 
-  add_education(): void {
-    console.log("inside of add education...")
-    // create the component factory
-    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(EducationDetailComponent);
+  // add_education(): void {
+  //   console.log("inside of add education...")
+  //   // create the component factory
+  //   let componentFactory = this.componentFactoryResolver.resolveComponentFactory(EducationDetailComponent);
 
-    // add the component to the view
-    let componentRef = this.container.createComponent(componentFactory);
+  //   // add the component to the view
+  //   let componentRef = this.container.createComponent(componentFactory);
 
-    // pass some data to the component
-    componentRef.instance.index = this._counter++;
+  //   // pass some data to the component
+  //   componentRef.instance.index = this._counter++;
 
-    // add reference for newly created component
-    this.componentsReferences.push(componentRef);
-  }
+  //   // add reference for newly created component
+  //   this.componentsReferences.push(componentRef);
+  // }
 
-  remove(index: number) {
-    console.log("removing2... " + index)
-    if (this.container.length < 1)
-      return;
+  // remove(index: number) {
+  //   console.log("removing2... " + index)
+  //   if (this.container.length < 1)
+  //     return;
 
-    let componentRef = this.componentsReferences.filter(
-      x => x.instance.unique_key == index
-    )[0];
+  //   let componentRef = this.componentsReferences.filter(
+  //     x => x.instance.unique_key == index
+  //   )[0];
 
-    let vcrIndex: number = this.container.indexOf(componentRef as any);
+  //   let vcrIndex: number = this.container.indexOf(componentRef as any);
 
-    console.log("===== "+componentRef)
-    // removing component from container
-    this.container.remove(vcrIndex);
+  //   console.log("===== "+this.container.indexOf(componentRef as any))
+  //   // removing component from container
+  //   this.container.remove(1);
 
-    // removing component from the list
-    this.componentsReferences = this.componentsReferences.filter(
-      x => x.instance.unique_key !== index
-    );
-  }
+  //   // removing component from the list
+  //   this.componentsReferences = this.componentsReferences.filter(
+  //     x => x.instance.unique_key !== index
+  //   );
+
+  //   console.log("new size: "+this.componentsReferences.length);
+  // }
 
 
 

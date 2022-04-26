@@ -3,30 +3,55 @@
     <mat-card-subtitle>Enter your professional qualifications to be display on resume.</mat-card-subtitle>
     <mat-card-content>
 
-        <div class="row">
-            <div class="col-md-4">
-                <mat-form-field class="full-width" appearance="fill">
-                    <mat-label>Qualification</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
+        <form [formGroup]="profesionalQualificationForm" (ngSubmit)="onSubmit()">
+            <div formArrayName="pqList">
+                <div *ngFor="let pq of pqList().controls; let pqIndex=index" style="margin-top: 20px;">
+                    <h4><b>New Professional Qualification {{pqIndex+1}}</b></h4>
+                    <div [formGroupName]="pqIndex">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mat-form-field class="full-width" appearance="fill">
+                                    <mat-label>Qualification</mat-label>
+                                    <input matInput formControlName="qualification">
+                                </mat-form-field>
+                            </div>
+                        </div>
 
-        <div class="row">
-            <div class="col-md-3">
-                <mat-form-field class="full-width" appearance="fill">
-                    <mat-label>Institution/School</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <mat-form-field class="full-width" appearance="fill">
+                                    <mat-label>Institution/School</mat-label>
+                                    <input matInput formControlName="institute">
+                                </mat-form-field>
+                            </div>
 
-            <div class="col-md-3">
-                <mat-form-field class="full-width" appearance="fill">
-                    <mat-label>Grade</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </div>
-        </div>
+                            <div class="col-md-3">
+                                <mat-form-field class="full-width" appearance="fill">
+                                    <mat-label>Grade</mat-label>
+                                    <input matInput formControlName="grade">
+                                </mat-form-field>
+                            </div>
 
+                            <div class="col-md-2" *ngIf="pqIndex>0">
+                                <button mat-mini-fab color="basic" aria-label="Example icon button with a home icon"
+                                    (click)="removeQualification(pqIndex)">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon">remove_circle_outine
+                                    </mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                </div>
+                <br>
+                <div class="col-md-1">
+                    <button mat-raised-button color="basic" (click)="addQualification()">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle</mat-icon>
+                        Add
+                    </button>
+                </div>
+            </div>
+        </form>
+        {{this.profesionalQualificationForm.value | json}}
     </mat-card-content>
 </mat-card>
